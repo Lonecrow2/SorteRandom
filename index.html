@@ -17,38 +17,75 @@
     </head>
     <main>
         <h1>SORTEIO</h1>
-        <p>Digite o item que quer na lista e clique em adicionar, no final clique em Sortear</p>
+        <p>Digite o item que quer na lista e clique em adicionar, no final clique em Sortear. Para remover um item da lista clique duas vezes nele.</p>
         <section id="container_geral">
             <div id="item_box">
-                <input type="text" name="item" id="item_id" placeholder="Digite o item aqui">
+                <input type="text" name="item" id="item_id" placeholder="Digite o item aqui" autocomplete="off">
                 <button id="btn_adicionar" onclick="adic()">Adicionar</button>
             </div>
 
             <div id="display_item"></div>
             <button id="btn_sortear" onclick="sortear()">SORTEAR</button>
+            <button id="btn_reset" onclick="btn_reset()">Reset</button>
         </section>
     </main>
     <footer>
 
     </footer>
     <script>
-        let item = document.getElementById('item_id')
-        let display = document.getElementById('display_item')
-        let adicionar = document.getElementById('btn_adicionar')
-        let itens_array = []
-        function adic() {
-            if (item.value == "") {
+        let item = document.getElementById('item_id');
+        let display = document.getElementById('display_item');
+        let itens_array = []; // armazenar os itens
 
+        //adicionar itens
+        function adic() {
+            if (item.value === "") {
+                
             } else {
-                itens_array.push(item.value)
-                display.innerHTML += `<p class="item_display">${item.value}</p><br>`
+                itens_array.push(item.value);
+
+                // Criar elemento dinamicamente
+                let novaTarefa = document.createElement("p");
+                novaTarefa.className = "item_display"; // Adiciona classe
+                novaTarefa.textContent = item.value; // Define o texto do elemento
+
+                // Adicionar evento de duplo clique para excluir o item
+                novaTarefa.ondblclick = function () {
+                    this.remove(); // Remove o elemento clicado
+                    let index = itens_array.indexOf(this.textContent); // Encontra o índice do array
+                    if (index !== -1) itens_array.splice(index, 1); // Remove do array
+                };
+
+                display.appendChild(novaTarefa); // Adiciona o elemento ao display
+                item.value = "";
+                item.focus();
             }
         }
 
+        // Detecta a tecla "Enter"
+        item.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                adic();
+            }
+        });
+
+        // Função para sortear um item aleatório
         function sortear() {
-            let indicesorteado = Math.floor(Math.random() * itens_array.length)
-            window.alert(itens_array[indicesorteado])
+            if (itens_array.length === 0) {
+                alert("A lista está vazia. Adicione itens antes de sortear!");
+                return;
+            }
+
+            let indicesorteado = Math.floor(Math.random() * itens_array.length);
+            alert(`O item sorteado foi: ${itens_array[indicesorteado]}`);
         }
+
+        // Função para resetar a lista inteira
+        function btn_reset() {
+            itens_array = []; // Reseta o array
+            display.innerHTML = ""; // Limpa o display
+        }
+
 
 
     </script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="description"
+        content="Site feito para sortear qualquer coisa, numeros, nomes ou cores, qualquer coisa que você quizer, basta digitar e clicar ele vai adicionando como uma lista, e no final você sorteia um deles">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SorteRandom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <head>
+
+    </head>
+    <main>
+        <h1>SORTEIO</h1>
+        <p>Digite o item que quer na lista e clique em adicionar, no final clique em Sortear</p>
+        <section id="container_geral">
+            <div id="item_box">
+                <input type="text" name="item" id="item_id" placeholder="Digite o item aqui">
+                <button id="btn_adicionar" onclick="adic()">Adicionar</button>
+            </div>
+
+            <div id="display_item"></div>
+            <button>SORTEAR</button>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        let item = document.getElementById('item_id')
+        let display = document.getElementById('display_item')
+        let adicionar = document.getElementById('btn_adicionar')
+        
+        function adic(){
+            if(item.value == ""){
+                window.alert('chita')
+            }else{
+                display.innerHTML += `<p class="item_display">${item.value}</p><br>`
+            }
+        }
+        
+
+    </script>
+</body>
+
+</html>

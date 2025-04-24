@@ -24,7 +24,7 @@
             </div>
 
             <div id="display_item"></div>
-            <button>SORTEAR</button>
+            <button id="btn_sortear" onclick="sortear()">SORTEAR</button>
         </section>
     </main>
     <footer>
@@ -34,15 +34,20 @@
         let item = document.getElementById('item_id')
         let display = document.getElementById('display_item')
         let adicionar = document.getElementById('btn_adicionar')
-        
+        let itens_array = []
         function adic(){
             if(item.value == ""){
-                window.alert('chita')
+               
             }else{
+                itens_array.push(item.value) 
                 display.innerHTML += `<p class="item_display">${item.value}</p><br>`
             }
         }
-        
+
+        function sortear(){
+            window.alert(itens_array.length)
+        }
+
 
     </script>
 </body>

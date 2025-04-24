@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <head>
 
     </head>
@@ -35,17 +36,18 @@
         let display = document.getElementById('display_item')
         let adicionar = document.getElementById('btn_adicionar')
         let itens_array = []
-        function adic(){
-            if(item.value == ""){
-               
-            }else{
-                itens_array.push(item.value) 
+        function adic() {
+            if (item.value == "") {
+
+            } else {
+                itens_array.push(item.value)
                 display.innerHTML += `<p class="item_display">${item.value}</p><br>`
             }
         }
 
-        function sortear(){
-            window.alert(itens_array.length)
+        function sortear() {
+            let indicesorteado = Math.floor(Math.random() * itens_array.length)
+            window.alert(itens_array[indicesorteado])
         }
 
 

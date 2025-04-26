@@ -17,16 +17,17 @@
     </head>
     <main>
         <h1>SORTEIO</h1>
-        <p>Digite o item que quer na lista e clique em adicionar, no final clique em Sortear. Para remover um item da lista clique duas vezes nele.</p>
+        <p>Digite o item que quer na lista e clique em adicionar, no final clique em Sortear. <br> Para remover um item da lista clique duas vezes nele.</p>
         <section id="container_geral">
             <div id="item_box">
                 <input type="text" name="item" id="item_id" placeholder="Digite o item aqui" autocomplete="off">
-                <button id="btn_adicionar" onclick="adic()">Adicionar</button>
+                <button id="btn_reset" onclick="btn_reset()">Reset</button>
+                <button id="btn_adicionar" onclick="adic()">+ Adicionar</button>
             </div>
 
             <div id="display_item"></div>
-            <button id="btn_sortear" onclick="sortear()">SORTEAR</button>
-            <button id="btn_reset" onclick="btn_reset()">Reset</button>
+            
+            <button id="btn_sortear" onclick="sortear()">!!! &#x1F3C6 SORTEAR AGORA!!!</button>
         </section>
     </main>
     <footer>

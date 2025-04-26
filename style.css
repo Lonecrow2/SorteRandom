@@ -3,7 +3,7 @@
 body{
     width: 98vw;
     min-height: 98vh;
-    background-color: #202020;
+    background-image: linear-gradient(145deg, #340096, #7200be,#84009e);
 }
 
 main{
@@ -14,20 +14,109 @@ main{
     align-items: center;
 }
 
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: 6rem;
+    margin: 0px 0px 5px 0px;
+    background-image: linear-gradient(to right, #b05bff, #e100ff,#d400ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+}
+
+#container_geral{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#item_box{
+    background-image: linear-gradient(145deg, #b1b1b193, #ffffff8e,#b1b1b193);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#item_id{
+    border: none;
+    border-radius: 2px;
+    padding: 3px;
+    background-color: #c6adff;
+    font-size: 16px;
+}
+
 #display_item{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
     margin: 20px 0px 0px 0px;
-    width: 250px;
-    height: 250px;
-    background-color: #474747;
+    width: 300px;
+    height: 50vh;
     padding: 5px;
+    background-color: #ffffffa6;
     border-radius: 10px;
     overflow: auto;
 }
 
 .item_display{
+    display: block;
+    white-space: nowrap;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    color: red;
-    margin: 0px 0px 0px 0px;
-    display: block;
+    color: #f7efff;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: #6f00ff;
+    margin: 4px 0px 0px 0px;
+    width: fit-content;
 }
+
+#btn_adicionar{
+    background-image: linear-gradient(145deg, #8400ff, #e100ff,#d400ff);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+#btn_reset{
+    background-image: linear-gradient(145deg, #8400ff, #e100ff,#d400ff);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+#btn_sortear{
+    background-image: linear-gradient(145deg, #ff9900, #c27502,#776500);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+    margin: 15px 0px 0px 0px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+#btn_reset:hover {
+    background-image: linear-gradient(145deg, #5c02af, #9503a8,#8d02a8);
+    color: #ffffff;
+}
+#btn_adicionar:hover {
+    background-image: linear-gradient(145deg, #5c02af, #9503a8,#8d02a8);
+    color: #ffffff;
+}
+#btn_sortear:hover {
+    background-image: linear-gradient(145deg, #b66d00, #643c00,#413700);
+    color: #ffffff;
+}
+
+

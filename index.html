@@ -16,7 +16,8 @@
         <img src="imagens/SorteRandomlogo.png" alt="SorteRandom Logo">
     </header>
     <main>
-        <p>Digite o item que quer na lista e clique em adicionar, no final clique em Sortear. <br> Para remover um item da lista clique duas vezes nele.</p>
+        <p>Digite o item que quer na lista e clique em adicionar, no final clique em Sortear. <br> Para remover um item
+            da lista clique duas vezes nele, ou reset para limpar tudo.</p>
         <section id="container_geral">
             <div id="item_box">
                 <input type="text" name="item" id="item_id" placeholder="Digite o item aqui" autocomplete="off">
@@ -25,22 +26,25 @@
             </div>
 
             <div id="display_item"></div>
-            
+            <div id="display_ganhador">
+                <p>Sorteado:---------------</p>
+            </div>
+
             <button id="btn_sortear" onclick="sortear()">!!! &#x1F3C6 SORTEAR AGORA!!!</button>
         </section>
     </main>
     <footer>
-
+        <p style="text-align: center;">© 2025 Ernesto Rampanelli Neto. Todos os direitos reservados.</p>
     </footer>
     <script>
         let item = document.getElementById('item_id');
         let display = document.getElementById('display_item');
         let itens_array = []; // armazenar os itens
-
+        let d_ganhador = document.getElementById('display_ganhador')
         //adicionar itens
+
         function adic() {
             if (item.value === "") {
-                
             } else {
                 itens_array.push(item.value);
 
@@ -77,16 +81,16 @@
             }
 
             let indicesorteado = Math.floor(Math.random() * itens_array.length);
-            alert(`O item sorteado foi: ${itens_array[indicesorteado]}`);
+            d_ganhador.innerHTML = `<p>Sorteado: <span style="color: #fdff6d; text-shadow: 1px 1px 3px black;">&#x1F389 ${itens_array[indicesorteado]} &#x1F389</span></p>`
+            // alert(`O item sorteado foi: ${itens_array[indicesorteado]}`);
         }
 
         // Função para resetar a lista inteira
         function btn_reset() {
             itens_array = []; // Reseta o array
             display.innerHTML = ""; // Limpa o display
+            d_ganhador.innerHTML = "<p>Sorteado:---------------</p>"
         }
-
-
 
     </script>
 </body>

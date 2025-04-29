@@ -103,6 +103,11 @@ main > p {
     background-color: #004d00;
     margin: 4px 0px 0px 0px;
     width: fit-content;
+    cursor: pointer;
+}
+
+#btn_caixa{
+    display: inline-block;
 }
 
 #btn_adicionar {

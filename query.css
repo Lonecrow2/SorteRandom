@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+@media (max-width: 420px){
+    html{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    body{
+        width: 98%;
+    }
+
+    main{
+        margin: auto;
+        width: 93%;
+    }
+
+    #container_geral{
+        width: 98%;
+    }
+    
+    #btn_caixa{
+        display: block;
+        margin: auto;
+        margin-top: 5px;
+        width: 165px;
+    }
+
+    #item_id{
+        display: block;
+        width: 80%;
+        margin: auto;
+    }
+    #btn_reset{
+        margin:  0px 20px 0px 0px;
+    }
+
+    #btn_adicional{
+        margin:  0px 0px 0px 20px;
+    }
+
+    #display_item{
+        width: 80%;
+    }
+    #item_box{
+        width: 96%;
+    }
+    #display_ganhador{
+        width: 88%;
+    }
+}

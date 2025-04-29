@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SorteRandom</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="query.css">
 </head>
 
 <body>
@@ -21,8 +22,10 @@
         <section id="container_geral">
             <div id="item_box">
                 <input type="text" name="item" id="item_id" placeholder="Digite o item aqui" autocomplete="off">
-                <button id="btn_reset" onclick="btn_reset()">Reset</button>
-                <button id="btn_adicionar" onclick="adic()">+ Adicionar</button>
+                <div id="btn_caixa">
+                    <button id="btn_reset" onclick="btn_reset()">Reset</button>
+                    <button id="btn_adicionar" onclick="adic()">+ Adicionar</button>
+                </div>
             </div>
 
             <div id="display_item"></div>
@@ -36,6 +39,7 @@
     <footer>
         <p style="text-align: center;">© 2025 Ernesto Rampanelli Neto. Todos os direitos reservados.</p>
     </footer>
+
     <script>
         let item = document.getElementById('item_id');
         let display = document.getElementById('display_item');

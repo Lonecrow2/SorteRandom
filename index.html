@@ -64,7 +64,6 @@
                     let index = itens_array.indexOf(this.textContent); // Encontra o índice do array
                     if (index !== -1) itens_array.splice(index, 1); // Remove do array
                 };
-
                 display.appendChild(novaTarefa); // Adiciona o elemento ao display
                 item.value = "";
                 item.focus();
@@ -77,6 +76,13 @@
                 adic();
             }
         });
+        function embaralhar(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
 
         // Função para sortear um item aleatório
         function sortear() {
@@ -84,10 +90,9 @@
                 alert("A lista está vazia. Adicione itens antes de sortear!");
                 return;
             }
-
-            let indicesorteado = Math.floor(Math.random() * itens_array.length);
-            d_ganhador.innerHTML = `<p>Sorteado: <span style="color: #fdff6d; text-shadow: 1px 1px 3px black;">&#x1F389 ${itens_array[indicesorteado]} &#x1F389</span></p>`
-            // alert(`O item sorteado foi: ${itens_array[indicesorteado]}`);
+            embaralhar(itens_array);
+            d_ganhador.innerHTML = `<p>Sorteado: <span style="color: #fdff6d; text-shadow: 1px 1px 3px black;">&#x1F389 ${itens_array[0]} &#x1F389</span></p>`
+            console.log(itens_array)
         }
 
         // Função para resetar a lista inteira
@@ -96,7 +101,6 @@
             display.innerHTML = ""; // Limpa o display
             d_ganhador.innerHTML = "<p>Sorteado:---------------</p>"
         }
-
     </script>
 </body>
 
